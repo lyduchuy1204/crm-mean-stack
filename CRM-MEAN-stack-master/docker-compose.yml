@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: ui
+    container_name: frontend
+    networks:
+      - crm
+    ports:
+      - "4200:4200"
+    restart: always
+
+  database:
+    image: mongo
+    container_name: database
+    networks:
+      - crm
+    ports:
+      - "27017:27017"
+    restart: always
+
+  backend:
+    image: server
+    container_name: backend
+    networks:
+      - crm
+    ports:
+      - "4040:4040"
+    environment:
+      - MONGOOSE_URI=mongodb://host.docker.internal:27017/CRM_DB
+    restart: always
+
+networks:
+  crm:
+    driver: bridge

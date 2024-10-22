@@ -1,0 +1,25 @@
+FROM node:16
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the local folder 'server' into the container
+COPY ./server /app/server
+
+# Rename the .env_example file to .env
+RUN mv /app/server/.env_example /app/server/.env
+
+# Install dependencies for the server
+RUN cd /app/server && npm install
+
+# Expose the port that the server will run on
+EXPOSE 4040
+
+# Set the environment variable for MongoDB URI
+ENV MONGOOSE_URI=mongodb://host.docker.internal:27017/CRM_DB
+
+# Run the script to create users
+RUN node /app/server/scripts/createUsers.js
+
+# Set the entry point to start the server
+ENTRYPOINT ["npm", "start", "--prefix", "/app/server"]

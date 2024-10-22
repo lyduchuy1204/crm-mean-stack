@@ -1,0 +1,2 @@
+docker build -t ui -f .\dockerfile_frontend .
+docker build -t server -f .\dockerfile_backend .

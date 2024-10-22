@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-10-22T13:51:08.920866" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\lyduc\Desktop\AutoRobot\login.robot">
+<test id="s1-t1" name="Login Test Using Edge Browser" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-22T13:51:09.256958" level="INFO">Opening browser 'Edge' to base url 'http://127.0.0.1:4200/'.</msg>
+<arg>${URL}</arg>
+<arg>Edge</arg>
+<arg>headless=False</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-22T13:51:09.256596" elapsed="4.190069"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-22T13:51:13.447516" elapsed="0.059858"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=${LOGIN_PAGE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-22T13:51:13.508045" elapsed="0.085259"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-22T13:51:13.594109" elapsed="2.261325"/>
+</kw>
+<status status="PASS" start="2024-10-22T13:51:09.255286" elapsed="6.600873"/>
+</test>
+<status status="PASS" start="2024-10-22T13:51:08.923079" elapsed="6.936821"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

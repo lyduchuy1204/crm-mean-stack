@@ -1,0 +1,15 @@
+cd C:\Users\lyduc\Desktop\AutoRobot
+
+Set-ExecutionPolicy RemoteSigned -Scope Process
+    // Set the execution policy to allow script execution: Run the following command to temporarily change the execution policy to RemoteSigned, which allows locally created scripts to run:
+
+python -m venv autorobot
+
+C:\Users\lyduc\Desktop\AutoRobot\autorobot\Scripts\Activate.ps1
+
+
+# deactivate
+# Set-ExecutionPolicy Restricted -Scope Process
+    // Revert the execution policy: Once you finish your work, you can revert to the default execution policy (Restricted) if needed by closing PowerShell or manually resetting it with:
+
+
